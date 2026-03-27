@@ -95,6 +95,11 @@ const routeMenuMap = Object.fromEntries(
 watch(
   () => route.path,
   (path: string) => {
+    if (path.startsWith("/news")) {
+      activeIndex.value = "3";
+      return;
+    }
+
     const currentIndex = routeMenuMap[path];
     if (currentIndex) {
       activeIndex.value = currentIndex;

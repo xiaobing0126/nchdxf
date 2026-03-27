@@ -3,6 +3,7 @@ import SectionPage from "@/views/common/section.vue";
 import Introduction from "@/views/about/introduction.vue";
 import Honor from "@/views/about/honor.vue";
 import News from "@/views/news/news.vue";
+import NewsDetail from "@/views/news/detail.vue";
 
 const siteRoutes: RouteRecordRaw[] = [
   {
@@ -22,6 +23,12 @@ const siteRoutes: RouteRecordRaw[] = [
     name: "news",
     component: News,
     meta: { title: "新闻资讯" },
+  },
+  {
+    path: "/news/:id",
+    name: "news-detail",
+    component: NewsDetail,
+    meta: { title: "新闻详情" },
   },
   {
     path: "/products/steel-door",
