@@ -6,6 +6,7 @@ import News from "@/views/news/news.vue";
 import NewsDetail from "@/views/news/detail.vue";
 import Contact from "@/views/contact/contact.vue";
 import Environment from "@/views/environment/environment.vue";
+import Report from "@/views/report/report.vue";
 
 const siteRoutes: RouteRecordRaw[] = [
   {
@@ -83,7 +84,7 @@ const siteRoutes: RouteRecordRaw[] = [
   {
     path: "/reports",
     name: "reports",
-    component: SectionPage,
+    component: Report,
     meta: { title: "检验报告" },
   },
   {
