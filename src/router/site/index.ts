@@ -1,6 +1,7 @@
 import type { RouteRecordRaw } from "vue-router";
 import SectionPage from "@/views/common/section.vue";
 import Introduction from "@/views/about/introduction.vue";
+import Honor from "@/views/about/honor.vue";
 import News from "@/views/news/news.vue";
 
 const siteRoutes: RouteRecordRaw[] = [
@@ -13,7 +14,7 @@ const siteRoutes: RouteRecordRaw[] = [
   {
     path: "/about/honor",
     name: "about-honor",
-    component: SectionPage,
+    component: Honor,
     meta: { title: "企业荣誉" },
   },
   {

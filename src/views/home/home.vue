@@ -6,7 +6,7 @@
       </el-carousel-item>
     </el-carousel>
 
-    <div class="home-content">
+    <div class="home-content products-head">
       <p class="title">PRODUCTS CENTER</p>
       <p class="sub-title">厂家直销</p>
     </div>
@@ -65,7 +65,7 @@
       </div>
     </section>
 
-    <div class="home-content">
+    <div class="home-content about-head">
       <p class="title">ABOUT US</p>
       <p class="sub-title">关于我们</p>
     </div>
@@ -170,6 +170,66 @@
         </article>
       </div>
     </section>
+
+    <div class="more">
+      <p class="more-text">
+        查看更多
+        <el-icon><ArrowRight /></el-icon>
+      </p>
+    </div>
+
+    <section class="news-contact-section">
+      <article class="news-panel">
+        <header class="panel-head">
+          <div class="head-left">
+            <span class="head-dot" />
+            <h3>新闻中心</h3>
+            <span class="head-en">NEWS</span>
+          </div>
+          <span class="head-more">MORE+</span>
+        </header>
+
+        <div class="news-body">
+          <article class="featured-news">
+            <div class="featured-date">
+              <strong>{{ newsFeatured.date }}</strong>
+              <span>{{ newsFeatured.year }}</span>
+            </div>
+            <div class="featured-content">
+              <h4>{{ newsFeatured.title }}</h4>
+              <p>{{ newsFeatured.summary }}</p>
+            </div>
+          </article>
+
+          <article v-for="item in newsList" :key="item.id" class="news-row">
+            <el-image class="news-thumb" :src="item.image" fit="cover" />
+            <div class="row-content">
+              <h5>{{ item.title }}</h5>
+              <p>{{ item.summary }}</p>
+            </div>
+            <div class="row-date">{{ item.date }}</div>
+          </article>
+        </div>
+      </article>
+
+      <aside class="contact-panel">
+        <header class="panel-head contact-head">
+          <div class="head-left">
+            <h3>联系我们</h3>
+            <span class="head-en">CONTACT US</span>
+          </div>
+          <!-- <span class="head-more">MORE+</span> -->
+        </header>
+
+        <el-image class="contact-banner" :src="contactBanner" fit="cover" />
+
+        <div class="contact-body">
+          <p class="company-name">南昌弘盾消防设备有限公司</p>
+          <p><strong>李总：</strong>13970083059</p>
+          <p><strong>地址：</strong>南昌市进贤县工业园</p>
+        </div>
+      </aside>
+    </section>
   </div>
 </template>
 
@@ -180,14 +240,17 @@ import banner03 from "@/assets/home/03_banner.jpg";
 import aboutBg from "@/assets/home/about/about_bg.png";
 import aboutContentBg from "@/assets/home/about/about_content_bg.png";
 import certisBg from "@/assets/home/certis/certis_bg.png";
-import product01 from "@/assets/home/products/01.jpg";
-import product02 from "@/assets/home/products/02.jpg";
-import product03 from "@/assets/home/products/03.jpg";
-import product04 from "@/assets/home/products/04.jpg";
-import product05 from "@/assets/home/products/05.jpg";
-import product06 from "@/assets/home/products/06.png";
-import product07 from "@/assets/home/products/07.png";
-import product08 from "@/assets/home/products/08.png";
+import product01 from "@/assets/home/products/steel/01.jpg";
+import product02 from "@/assets/home/products/steel/02.jpg";
+import product03 from "@/assets/home/products/steel/03.jpg";
+import product04 from "@/assets/home/products/steel/04.jpg";
+import product05 from "@/assets/home/products/steel/05.jpg";
+import product06 from "@/assets/home/products/steel/06.png";
+import product07 from "@/assets/home/products/steel/07.png";
+import product08 from "@/assets/home/products/steel/08.png";
+import contactBanner from "@/assets/home/03_banner.jpg";
+import newsThumb01 from "@/assets/home/perform/友邦壹号院.png";
+import newsThumb02 from "@/assets/home/perform/星悦荟.png";
 
 const imgArr = [banner01, banner02, banner03];
 
@@ -259,6 +322,33 @@ const performanceItems = performanceSeed
   .filter((item) => item.image);
 
 const performancePreviewList = performanceItems.map((item) => item.image);
+
+const newsFeatured = {
+  date: "07-08",
+  year: "2020",
+  title: "乙级防火窗应该具有哪些条件?",
+  summary:
+    "乙级防火窗应具有哪些条件目前高层修建外窗大少数采用断桥铝的中空玻璃窗，以满足高...",
+};
+
+const newsList = [
+  {
+    id: 1,
+    title: "常开防火门自动控制原理以及检查方法",
+    summary:
+      "对于常开的防火门，民用与工业建筑的日常检查应重点关注闭门器和联动状态。",
+    date: "07 /08",
+    image: newsThumb01,
+  },
+  {
+    id: 2,
+    title: "防火卷帘门如何安装",
+    summary:
+      "第一步：安装导轨，确定两侧导轨安装位置并校准垂直度，确保卷帘运行稳定。",
+    date: "07 /08",
+    image: newsThumb02,
+  },
+];
 </script>
 
 <style scoped lang="scss">
@@ -292,6 +382,14 @@ const performancePreviewList = performanceItems.map((item) => item.image);
       color: $text-main;
       margin-left: 16px;
     }
+  }
+
+  .about-head {
+    margin-top: 60px;
+  }
+
+  .product-head {
+    margin-top: 60px;
   }
 
   .products-wrap {
@@ -606,7 +704,7 @@ const performancePreviewList = performanceItems.map((item) => item.image);
   }
 
   .qualification-head {
-    margin-top: 26px;
+    margin-top: 60px;
 
     .title {
       letter-spacing: 1px;
@@ -614,7 +712,7 @@ const performancePreviewList = performanceItems.map((item) => item.image);
   }
 
   .performance-head {
-    margin-top: 30px;
+    margin-top: 60px;
 
     .title {
       color: #be1c22;
@@ -692,6 +790,220 @@ const performancePreviewList = performanceItems.map((item) => item.image);
         color: #4a4a4a;
         font-weight: 600;
         line-height: 1;
+      }
+    }
+  }
+
+  .news-contact-section {
+    margin: 60px 24px;
+    display: grid;
+    grid-template-columns: minmax(0, 2.2fr) minmax(360px, 1fr);
+    gap: 24px;
+
+    .panel-head {
+      height: 78px;
+      border-top: 4px solid #be1c22;
+      border-bottom: 1px solid #dcdcdc;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+
+      .head-left {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .head-dot {
+        width: 14px;
+        height: 14px;
+        background: linear-gradient(145deg, #2f2f2f 0 55%, #f29a1a 55% 100%);
+      }
+
+      h3 {
+        margin: 0;
+        font-size: 44px;
+        transform: scale(0.5);
+        transform-origin: left center;
+        color: #2f2f2f;
+        font-weight: 700;
+      }
+
+      .head-en {
+        font-size: 18px;
+        color: #c7c7c7;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        margin-left: -4px;
+      }
+
+      .head-more {
+        font-size: 18px;
+        color: #666;
+        font-weight: 600;
+        cursor: pointer;
+        &:hover {
+          color: $brand-color;
+        }
+      }
+    }
+
+    .news-panel {
+      background: #f6f6f6;
+      border: 1px solid #e2e2e2;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+
+    .news-body {
+      padding: 16px 22px 20px;
+    }
+
+    .featured-news {
+      display: grid;
+      grid-template-columns: 140px minmax(0, 1fr);
+      gap: 22px;
+      border-bottom: 1px dashed #d9d9d9;
+      padding-bottom: 20px;
+      margin-bottom: 18px;
+
+      .featured-date {
+        color: #c0c0c0;
+        padding-top: 2px;
+
+        strong {
+          display: block;
+          font-size: 32px;
+          line-height: 1;
+          font-weight: 600;
+          letter-spacing: 1px;
+        }
+
+        span {
+          margin-top: 6px;
+          display: block;
+          font-size: 24px;
+          line-height: 1;
+        }
+      }
+
+      .featured-content {
+        h4 {
+          margin: 0;
+          color: #3c3c3c;
+          font-size: 36px;
+          transform: scale(0.5);
+          transform-origin: left center;
+          width: 200%;
+          font-weight: 700;
+        }
+
+        p {
+          margin: 12px 0 0;
+          color: #a0a0a0;
+          font-size: 16px;
+          line-height: 1.6;
+          display: -webkit-box;
+          -webkit-line-clamp: 1;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+      }
+    }
+
+    .news-row {
+      display: grid;
+      grid-template-columns: 150px minmax(0, 1fr) 90px;
+      gap: 16px;
+      align-items: center;
+      padding-top: 12px;
+      border-top: 1px dashed #dddddd;
+
+      & + .news-row {
+        margin-top: 10px;
+      }
+
+      .news-thumb {
+        width: 150px;
+        height: 94px;
+      }
+
+      .row-content {
+        h5 {
+          margin: 0;
+          color: #3f3f3f;
+          font-size: 34px;
+          transform: scale(0.5);
+          transform-origin: left center;
+          width: 200%;
+          font-weight: 700;
+        }
+
+        p {
+          margin: 8px 0 0;
+          color: #9c9c9c;
+          font-size: 15px;
+          line-height: 1.6;
+          display: -webkit-box;
+          -webkit-line-clamp: 1;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+      }
+
+      .row-date {
+        color: #c4c4c4;
+        font-size: 28px;
+        font-weight: 300;
+        letter-spacing: 1px;
+        text-align: right;
+      }
+    }
+
+    .contact-panel {
+      border: 1px solid #e2e2e2;
+      background: #f6f6f6;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+
+      .contact-head {
+        background: #be1c22;
+        border-top: 0;
+        border-bottom: 0;
+
+        h3,
+        .head-en,
+        .head-more {
+          color: #fff;
+        }
+      }
+
+      .contact-banner {
+        width: 100%;
+        height: 210px;
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+      }
+
+      .contact-body {
+        padding: 22px 22px 28px;
+
+        p {
+          margin: 0;
+          color: #404040;
+          font-size: 18px;
+          line-height: 1.7;
+          font-weight: 500;
+
+          & + p {
+            margin-top: 6px;
+          }
+        }
+
+        .company-name {
+          margin-bottom: 8px;
+          font-weight: 700;
+          font-size: 22px;
+          color: #333;
+        }
       }
     }
   }
@@ -786,6 +1098,16 @@ const performancePreviewList = performanceItems.map((item) => item.image);
       }
     }
 
+    .news-contact-section {
+      grid-template-columns: minmax(0, 1fr);
+
+      .contact-panel {
+        .contact-banner {
+          height: 260px;
+        }
+      }
+    }
+
     .qualification-section {
       .qualification-grid {
         padding: 12px 26px 0;
@@ -853,6 +1175,25 @@ const performancePreviewList = performanceItems.map((item) => item.image);
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
+
+    .news-contact-section {
+      .news-row {
+        grid-template-columns: 130px minmax(0, 1fr);
+
+        .row-date {
+          display: none;
+        }
+
+        .news-thumb {
+          width: 130px;
+          height: 82px;
+        }
+      }
+
+      .featured-news {
+        grid-template-columns: 120px minmax(0, 1fr);
+      }
+    }
   }
 }
 
@@ -890,6 +1231,54 @@ const performancePreviewList = performanceItems.map((item) => item.image);
     .performance-section {
       .performance-grid {
         grid-template-columns: 1fr;
+      }
+    }
+
+    .news-contact-section {
+      margin: 16px 12px 0;
+      gap: 14px;
+
+      .panel-head {
+        padding: 0 14px;
+        height: 64px;
+
+        h3 {
+          font-size: 36px;
+        }
+
+        .head-en,
+        .head-more {
+          font-size: 14px;
+        }
+      }
+
+      .news-body {
+        padding: 12px;
+      }
+
+      .featured-news {
+        grid-template-columns: 86px minmax(0, 1fr);
+        gap: 10px;
+
+        .featured-date {
+          strong {
+            font-size: 26px;
+          }
+
+          span {
+            font-size: 18px;
+          }
+        }
+      }
+
+      .news-row {
+        grid-template-columns: 92px minmax(0, 1fr);
+        gap: 10px;
+
+        .news-thumb {
+          width: 92px;
+          height: 66px;
+        }
       }
     }
   }
@@ -958,6 +1347,41 @@ const performancePreviewList = performanceItems.map((item) => item.image);
       .performance-card {
         .performance-image {
           height: 220px;
+        }
+      }
+    }
+
+    .news-contact-section {
+      .panel-head {
+        .head-left {
+          gap: 10px;
+        }
+
+        h3 {
+          font-size: 32px;
+        }
+
+        .head-en,
+        .head-more {
+          font-size: 13px;
+        }
+      }
+
+      .contact-panel {
+        .contact-banner {
+          height: 170px;
+        }
+
+        .contact-body {
+          padding: 14px;
+
+          .company-name {
+            font-size: 22px;
+          }
+
+          p {
+            font-size: 18px;
+          }
         }
       }
     }
