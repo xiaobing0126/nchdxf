@@ -3,14 +3,23 @@ import {
   createWebHistory,
   type RouteRecordRaw,
 } from "vue-router";
+
+import homeRoutes from "./home";
+import siteRoutes from "./site";
 import HomeView from "@/views/HomeView.vue";
 
 const routes: RouteRecordRaw[] = [
   {
     path: "/",
-    name: "home",
+    redirect: "/home",
+  },
+  {
+    path: "/homeview",
+    name: "home-view",
     component: HomeView,
   },
+  ...homeRoutes,
+  ...siteRoutes,
 ];
 
 const router = createRouter({

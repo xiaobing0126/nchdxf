@@ -1,0 +1,8 @@
+{
+  "common": {
+    "language": "语言",
+    "switchToZh": "切换中文",
+    "switchToEn": "切换英文",
+    "currentLang": "当前语言"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "home": {
+    "title": "Project Initialized",
+    "enabled": "Enabled: Vue Router + Pinia + Element Plus + Sass + Vue I18n",
+    "welcome": "This is a global i18n example",
+    "count": "count",
+    "double": "double",
+    "plusOne": "Pinia +1"
+  }
+}

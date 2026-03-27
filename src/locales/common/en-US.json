@@ -1,0 +1,8 @@
+{
+  "common": {
+    "language": "Language",
+    "switchToZh": "Switch to Chinese",
+    "switchToEn": "Switch to English",
+    "currentLang": "Current locale"
+  }
+}

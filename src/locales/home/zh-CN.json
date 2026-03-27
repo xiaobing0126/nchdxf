@@ -1,0 +1,10 @@
+{
+  "home": {
+    "title": "项目初始化完成",
+    "enabled": "已启用：Vue Router + Pinia + Element Plus + Sass + Vue I18n",
+    "welcome": "这是一个全局国际化示例",
+    "count": "计数",
+    "double": "双倍",
+    "plusOne": "Pinia +1"
+  }
+}
