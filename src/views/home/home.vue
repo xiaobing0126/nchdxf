@@ -34,8 +34,8 @@
       </div>
     </section>
 
-    <div class="more">
-      <p class="more-text">
+    <div class="more products-more">
+      <p class="more-text" @click="goProductsCenter">
         查看更多
         <el-icon><ArrowRight /></el-icon>
       </p>
@@ -80,25 +80,25 @@
         </p>
 
         <div class="about-feature-list">
-          <div class="feature-item">
+          <div class="feature-item" @click="goTo('/about/introduction')">
             <div class="feature-circle">
               <el-icon><OfficeBuilding /></el-icon>
             </div>
             <p>公司简介</p>
           </div>
-          <div class="feature-item">
+          <div class="feature-item" @click="goTo('/factory')">
             <div class="feature-circle">
               <el-icon><UserFilled /></el-icon>
             </div>
             <p>厂房环境</p>
           </div>
-          <div class="feature-item">
+          <div class="feature-item" @click="goTo('/about/honor')">
             <div class="feature-circle">
               <el-icon><Trophy /></el-icon>
             </div>
             <p>企业荣誉</p>
           </div>
-          <div class="feature-item">
+          <div class="feature-item" @click="goTo('/reports')">
             <div class="feature-circle">
               <el-icon><Reading /></el-icon>
             </div>
@@ -186,7 +186,7 @@
             <h3>新闻中心</h3>
             <span class="head-en">NEWS</span>
           </div>
-          <span class="head-more">MORE+</span>
+          <span class="head-more" @click="goTo('/news')">MORE+</span>
         </header>
 
         <div class="news-body">
@@ -251,6 +251,9 @@ import product08 from "@/assets/home/products/steel/08.png";
 import contactBanner from "@/assets/home/03_banner.jpg";
 import newsThumb01 from "@/assets/home/perform/友邦壹号院.png";
 import newsThumb02 from "@/assets/home/perform/星悦荟.png";
+import { useRouter } from "vue-router";
+
+const router = useRouter();
 
 const imgArr = [banner01, banner02, banner03];
 
@@ -349,6 +352,16 @@ const newsList = [
     image: newsThumb02,
   },
 ];
+
+const goTo = (path: string) => {
+  if (router.currentRoute.value.path !== path) {
+    router.push(path);
+  }
+};
+
+const goProductsCenter = () => {
+  goTo("/products/steel-door");
+};
 </script>
 
 <style scoped lang="scss">
@@ -672,6 +685,7 @@ const newsList = [
         flex-direction: column;
         align-items: center;
         gap: 10px;
+        cursor: pointer;
 
         p {
           margin: 0;

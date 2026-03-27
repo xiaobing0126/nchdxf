@@ -7,6 +7,7 @@ import NewsDetail from "@/views/news/detail.vue";
 import Contact from "@/views/contact/contact.vue";
 import Environment from "@/views/environment/environment.vue";
 import Report from "@/views/report/report.vue";
+import ProductList from "@/views/product/list.vue";
 
 const siteRoutes: RouteRecordRaw[] = [
   {
@@ -36,50 +37,50 @@ const siteRoutes: RouteRecordRaw[] = [
   {
     path: "/products/steel-door",
     name: "products-steel-door",
-    component: SectionPage,
-    meta: { title: "钢质防火门" },
+    component: ProductList,
+    meta: { title: "钢制防火门", productFolder: "steeldoor" },
   },
   {
     path: "/products/wood-door",
     name: "products-wood-door",
-    component: SectionPage,
-    meta: { title: "木质防火门" },
+    component: ProductList,
+    meta: { title: "木质防火门", productFolder: "woodendoor" },
   },
   {
     path: "/products/steel-window",
     name: "products-steel-window",
-    component: SectionPage,
-    meta: { title: "钢质防火窗" },
+    component: ProductList,
+    meta: { title: "钢质防火窗", productFolder: "woodenwindow" },
   },
   {
     path: "/products/aluminum-window",
     name: "products-aluminum-window",
-    component: SectionPage,
-    meta: { title: "铝质防火窗" },
+    component: ProductList,
+    meta: { title: "铝质防火窗", productFolder: "aluminumwindow" },
   },
   {
     path: "/products/stainless-door",
     name: "products-stainless-door",
-    component: SectionPage,
-    meta: { title: "不锈钢防火门" },
+    component: ProductList,
+    meta: { title: "不锈钢防火门", productFolder: "staindoor" },
   },
   {
     path: "/products/shutter",
     name: "products-shutter",
-    component: SectionPage,
-    meta: { title: "特质防火卷帘" },
+    component: ProductList,
+    meta: { title: "特级防火卷帘", productFolder: "rollcurtain" },
   },
   {
     path: "/products/smoke-barrier",
     name: "products-smoke-barrier",
-    component: SectionPage,
-    meta: { title: "挡烟垂壁" },
+    component: ProductList,
+    meta: { title: "挡烟垂壁", productFolder: "cliffface" },
   },
   {
     path: "/products/fire-glass",
     name: "products-fire-glass",
-    component: SectionPage,
-    meta: { title: "防火玻璃" },
+    component: ProductList,
+    meta: { title: "防火玻璃", productFolder: "glass" },
   },
   {
     path: "/reports",

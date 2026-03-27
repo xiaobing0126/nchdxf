@@ -54,12 +54,18 @@
     <el-main>
       <router-view />
     </el-main>
+
+    <el-footer class="app-footer">
+      <p class="line-1">Copyright© 南昌弘盾消防设备有限公司</p>
+      <p class="line-2">李总：13970083059 地址：南昌市进贤县工业园</p>
+      <p class="line-3">赣ICP备20008938号-1</p>
+    </el-footer>
   </el-container>
 </template>
 
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
-const { t } = useI18n();
+const { t, locale } = useI18n();
 
 import { useRoute, useRouter } from "vue-router";
 const router = useRouter();
@@ -68,6 +74,10 @@ const route = useRoute();
 import { setAppLocale, type Locale } from "@/locales";
 
 import { ref, watch } from "vue";
+
+const updateDocumentTitle = () => {
+  document.title = t("common.siteTitle");
+};
 
 const activeIndex = ref("1");
 const menuRouteMap: Record<string, string> = {
@@ -97,6 +107,7 @@ watch(
   (path: string) => {
     if (path.startsWith("/news")) {
       activeIndex.value = "3";
+      updateDocumentTitle();
       return;
     }
 
@@ -104,6 +115,16 @@ watch(
     if (currentIndex) {
       activeIndex.value = currentIndex;
     }
+
+    updateDocumentTitle();
+  },
+  { immediate: true },
+);
+
+watch(
+  () => locale.value,
+  () => {
+    updateDocumentTitle();
   },
   { immediate: true },
 );
@@ -124,6 +145,14 @@ function changeLocale(locale: string) {
 <style lang="scss" scoped>
 .app-shell {
   background-color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  :deep(.el-main) {
+    flex: 1;
+  }
+
   .app-header {
     display: flex;
     align-items: center;
@@ -189,6 +218,68 @@ function changeLocale(locale: string) {
   .card-header {
     font-size: 18px;
     font-weight: 600;
+  }
+
+  .app-footer {
+    height: auto;
+    min-height: 56px;
+    padding: 8px 12px 6px;
+    background: #2f353f;
+    color: #f0f1f3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+
+    p {
+      margin: 0;
+      line-height: 1.2;
+      text-align: center;
+      font-weight: 500;
+    }
+
+    .line-1 {
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    .line-2 {
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    .line-3 {
+      font-size: 13px;
+      white-space: nowrap;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .app-shell {
+    .app-footer {
+      min-height: 52px;
+      gap: 2px;
+
+      .line-1,
+      .line-2,
+      .line-3 {
+        white-space: normal;
+      }
+
+      .line-1 {
+        font-size: 12px;
+      }
+
+      .line-2 {
+        font-size: 12px;
+      }
+
+      .line-3 {
+        font-size: 12px;
+      }
+    }
   }
 }
 </style>
