@@ -144,6 +144,32 @@
         </el-carousel-item>
       </el-carousel>
     </section>
+
+    <div class="home-content performance-head">
+      <p class="title">PROJECT PERFORMANCE</p>
+      <p class="sub-title">工程业绩</p>
+    </div>
+
+    <section class="performance-section">
+      <div class="performance-grid">
+        <article
+          v-for="(item, index) in performanceItems"
+          :key="item.id"
+          class="performance-card"
+        >
+          <el-image
+            class="performance-image"
+            :src="item.image"
+            :preview-src-list="performancePreviewList"
+            :initial-index="index"
+            fit="cover"
+          />
+          <p :class="['performance-name', { active: item.active }]">
+            {{ item.title }}
+          </p>
+        </article>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -199,6 +225,40 @@ const certisGroups = Array.from(
 );
 
 const certisPreviewList = certisList.map((item) => item.image);
+
+const performModules = import.meta.glob(
+  "@/assets/home/perform/*.{png,jpg,jpeg}",
+  {
+    eager: true,
+    import: "default",
+  },
+) as Record<string, string>;
+
+const performanceSeed = [
+  { id: 1, title: "萍乡星星科技", fileName: "星星科技", active: false },
+  { id: 2, title: "友邦一号院", fileName: "友邦壹号院", active: true },
+  { id: 3, title: "星悦汇", fileName: "星悦荟", active: false },
+  { id: 4, title: "宜春中央城", fileName: "宜春中央城", active: false },
+  { id: 5, title: "泰豪VR", fileName: "泰豪VR", active: false },
+  { id: 6, title: "新旅·明樾台", fileName: "新旅明樾台", active: false },
+];
+
+const performanceItems = performanceSeed
+  .map((item) => {
+    const matchedPath = Object.keys(performModules).find((path) =>
+      path.includes(item.fileName),
+    );
+
+    return {
+      id: item.id,
+      title: item.title,
+      active: item.active,
+      image: matchedPath ? performModules[matchedPath] : "",
+    };
+  })
+  .filter((item) => item.image);
+
+const performancePreviewList = performanceItems.map((item) => item.image);
 </script>
 
 <style scoped lang="scss">
@@ -553,6 +613,89 @@ const certisPreviewList = certisList.map((item) => item.image);
     }
   }
 
+  .performance-head {
+    margin-top: 30px;
+
+    .title {
+      color: #be1c22;
+      letter-spacing: 1px;
+    }
+
+    .sub-title {
+      color: #3f3f3f;
+      margin-left: 0;
+      position: relative;
+      width: max-content;
+      margin: 4px auto 0;
+      padding: 0 46px;
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        width: 34px;
+        height: 1px;
+        background: #cfcfcf;
+      }
+
+      &::before {
+        left: 0;
+      }
+
+      &::after {
+        right: 0;
+      }
+    }
+  }
+
+  .performance-section {
+    margin: 20px 24px 0;
+    padding: 26px 24px 30px;
+
+    .performance-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 26px;
+    }
+
+    .performance-card {
+      border: 1px solid #dcdcdc;
+      background: #fff;
+      &:hover {
+        .performance-name {
+          color: #fff;
+          background: #bf1d24;
+        }
+      }
+
+      .performance-image {
+        width: 100%;
+        height: 285px;
+
+        :deep(.el-image__inner) {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .performance-name {
+        margin: 0;
+        min-height: 56px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 30px;
+        transform: scale(0.5);
+        transform-origin: center center;
+        color: #4a4a4a;
+        font-weight: 600;
+        line-height: 1;
+      }
+    }
+  }
+
   .qualification-section {
     margin: 20px 0;
     overflow: hidden;
@@ -631,6 +774,18 @@ const certisPreviewList = certisList.map((item) => item.image);
       }
     }
 
+    .performance-section {
+      .performance-grid {
+        gap: 16px;
+      }
+
+      .performance-card {
+        .performance-image {
+          height: 240px;
+        }
+      }
+    }
+
     .qualification-section {
       .qualification-grid {
         padding: 12px 26px 0;
@@ -692,6 +847,12 @@ const certisPreviewList = certisList.map((item) => item.image);
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
+
+    .performance-section {
+      .performance-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
   }
 }
 
@@ -723,6 +884,12 @@ const certisPreviewList = certisList.map((item) => item.image);
 
       .cert-image-wrap {
         height: 280px;
+      }
+    }
+
+    .performance-section {
+      .performance-grid {
+        grid-template-columns: 1fr;
       }
     }
   }
@@ -780,6 +947,17 @@ const certisPreviewList = certisList.map((item) => item.image);
           .el-icon {
             font-size: 30px;
           }
+        }
+      }
+    }
+
+    .performance-section {
+      margin: 14px 12px 0;
+      padding: 14px;
+
+      .performance-card {
+        .performance-image {
+          height: 220px;
         }
       }
     }
