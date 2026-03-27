@@ -4,6 +4,8 @@ import Introduction from "@/views/about/introduction.vue";
 import Honor from "@/views/about/honor.vue";
 import News from "@/views/news/news.vue";
 import NewsDetail from "@/views/news/detail.vue";
+import Contact from "@/views/contact/contact.vue";
+import Environment from "@/views/environment/environment.vue";
 
 const siteRoutes: RouteRecordRaw[] = [
   {
@@ -87,13 +89,13 @@ const siteRoutes: RouteRecordRaw[] = [
   {
     path: "/factory",
     name: "factory",
-    component: SectionPage,
+    component: Environment,
     meta: { title: "厂房环境" },
   },
   {
     path: "/contact",
     name: "contact",
-    component: SectionPage,
+    component: Contact,
     meta: { title: "联系我们" },
   },
 ];
