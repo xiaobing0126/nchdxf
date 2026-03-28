@@ -19,13 +19,16 @@
       </article>
     </div>
 
-    <div v-if="!productItems.length" class="empty-state">暂无产品图片</div>
+    <div v-if="!productItems.length" class="empty-state">
+      {{ t("site.product.noImages") }}
+    </div>
   </section>
 </template>
 
 <script setup lang="ts">
 import { computed } from "vue";
 import { useRoute } from "vue-router";
+import { useI18n } from "vue-i18n";
 
 type ProductItem = {
   id: number;
@@ -33,11 +36,12 @@ type ProductItem = {
 };
 
 type ProductRouteMeta = {
-  title?: string;
+  titleKey?: string;
   productFolder?: string;
 };
 
 const route = useRoute();
+const { t } = useI18n();
 
 const productModules = import.meta.glob(
   "@/assets/product/*/*.{png,jpg,jpeg,webp}",
@@ -49,7 +53,14 @@ const productModules = import.meta.glob(
 
 const currentMeta = computed(() => (route.meta ?? {}) as ProductRouteMeta);
 
-const currentTitle = computed(() => currentMeta.value.title ?? "产品中心");
+const currentTitle = computed(() => {
+  const titleKey = currentMeta.value.titleKey;
+  if (!titleKey) {
+    return t("site.product.defaultTitle");
+  }
+
+  return t(`site.routes.${titleKey}`);
+});
 
 const activeFolder = computed(
   () => currentMeta.value.productFolder ?? "steeldoor",

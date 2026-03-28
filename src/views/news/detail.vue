@@ -22,7 +22,8 @@
           :disabled="!prevItem"
           @click="goToSibling(prevItem?.id)"
         >
-          上一篇：{{ prevItem ? prevItem.title : "没有了" }}
+          {{ t("site.news.detail.previous") }}
+          {{ prevItem ? prevItem.title : t("site.news.detail.noMore") }}
         </button>
         <button
           type="button"
@@ -30,39 +31,47 @@
           :disabled="!nextItem"
           @click="goToSibling(nextItem?.id)"
         >
-          下一篇：{{ nextItem ? nextItem.title : "没有了" }}
+          {{ t("site.news.detail.next") }}
+          {{ nextItem ? nextItem.title : t("site.news.detail.noMore") }}
         </button>
       </div>
 
       <div class="actions">
-        <el-button class="back-btn" type="primary" @click="goBack"
-          >返回新闻列表</el-button
-        >
+        <el-button class="back-btn" type="primary" @click="goBack">{{
+          t("site.news.detail.backToList")
+        }}</el-button>
       </div>
     </article>
 
     <article v-else class="detail-card empty-state">
-      <h3>未找到对应文章</h3>
-      <p>该新闻可能已下线或链接无效。</p>
-      <el-button class="back-btn" type="primary" @click="goBack"
-        >返回新闻列表</el-button
-      >
+      <h3>{{ t("site.news.detail.notFoundTitle") }}</h3>
+      <p>{{ t("site.news.detail.notFoundDesc") }}</p>
+      <el-button class="back-btn" type="primary" @click="goBack">{{
+        t("site.news.detail.backToList")
+      }}</el-button>
     </article>
   </section>
 </template>
 
 <script setup lang="ts">
 import { computed } from "vue";
+import { useI18n } from "vue-i18n";
 import { useRoute, useRouter } from "vue-router";
 import { House } from "@element-plus/icons-vue";
-import { newsList } from "@/utils/news";
+import { getNewsList } from "@/utils/news";
 
 const route = useRoute();
 const router = useRouter();
+const { t, locale } = useI18n();
+
+const newsList = computed(() => {
+  locale.value;
+  return getNewsList(t);
+});
 
 const newsItem = computed(() => {
   const id = String(route.params.id ?? "");
-  return newsList.find((item) => item.id === id);
+  return newsList.value.find((item) => item.id === id);
 });
 
 const currentIndex = computed(() => {
@@ -70,7 +79,7 @@ const currentIndex = computed(() => {
     return -1;
   }
 
-  return newsList.findIndex((item) => item.id === newsItem.value?.id);
+  return newsList.value.findIndex((item) => item.id === newsItem.value?.id);
 });
 
 const prevItem = computed(() => {
@@ -78,15 +87,18 @@ const prevItem = computed(() => {
     return null;
   }
 
-  return newsList[currentIndex.value - 1] ?? null;
+  return newsList.value[currentIndex.value - 1] ?? null;
 });
 
 const nextItem = computed(() => {
-  if (currentIndex.value < 0 || currentIndex.value >= newsList.length - 1) {
+  if (
+    currentIndex.value < 0 ||
+    currentIndex.value >= newsList.value.length - 1
+  ) {
     return null;
   }
 
-  return newsList[currentIndex.value + 1] ?? null;
+  return newsList.value[currentIndex.value + 1] ?? null;
 });
 
 const contentLines = computed(() => {

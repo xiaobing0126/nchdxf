@@ -1,15 +1,18 @@
 import { createI18n } from "vue-i18n";
 import commonMessages from "./common";
 import homeMessages from "./home";
+import siteMessages from "./site";
 
 const messages = {
   "zh-CN": {
     ...commonMessages["zh-CN"],
     ...homeMessages["zh-CN"],
+    ...siteMessages["zh-CN"],
   },
   "en-US": {
     ...commonMessages["en-US"],
     ...homeMessages["en-US"],
+    ...siteMessages["en-US"],
   },
 } as const;
 

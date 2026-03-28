@@ -13,17 +13,21 @@
           :initial-index="index"
           fit="cover"
         />
-        <p class="environment-title">厂房环境</p>
+        <p class="environment-title">{{ t("site.environment.title") }}</p>
       </article>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
+import { useI18n } from "vue-i18n";
+
 type EnvironmentItem = {
   id: number;
   image: string;
 };
+
+const { t } = useI18n();
 
 const environmentModules = import.meta.glob(
   "@/assets/environment/*.{png,jpg,jpeg,webp}",

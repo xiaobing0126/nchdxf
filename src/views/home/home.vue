@@ -7,8 +7,8 @@
     </el-carousel>
 
     <div class="home-content products-head">
-      <p class="title">PRODUCTS CENTER</p>
-      <p class="sub-title">厂家直销</p>
+      <p class="title">{{ t("site.home.headingProductsCenter") }}</p>
+      <p class="sub-title">{{ t("site.home.factoryDirectSales") }}</p>
     </div>
 
     <section class="products-wrap">
@@ -36,7 +36,7 @@
 
     <div class="more products-more">
       <p class="more-text" @click="goProductsCenter">
-        查看更多
+        {{ t("site.home.viewMore") }}
         <el-icon><ArrowRight /></el-icon>
       </p>
     </div>
@@ -46,37 +46,39 @@
       :style="{ backgroundImage: `url(${aboutBg})` }"
     >
       <div class="banner-left">
-        <p class="banner-title">为您生产安全的防火门窗产品</p>
+        <p class="banner-title">{{ t("site.home.safeBanner") }}</p>
         <div class="banner-tags">
-          <span class="tag-item">住宅小区</span>
-          <span class="tag-item">商场</span>
-          <span class="tag-item">酒店</span>
-          <span class="tag-item">办公楼</span>
+          <span class="tag-item">{{ t("site.home.tags.residential") }}</span>
+          <span class="tag-item">{{ t("site.home.tags.mall") }}</span>
+          <span class="tag-item">{{ t("site.home.tags.hotel") }}</span>
+          <span class="tag-item">{{ t("site.home.tags.office") }}</span>
         </div>
       </div>
 
       <div class="banner-right">
         <div class="phone-line">
           <el-icon class="phone-icon"><Phone /></el-icon>
-          <span>咨询电话</span>
+          <span>{{ t("site.home.hotline") }}</span>
           <strong>13970083059</strong>
         </div>
-        <button type="button" class="consult-btn">立即咨询</button>
+        <button type="button" class="consult-btn">
+          {{ t("site.home.consultNow") }}
+        </button>
       </div>
     </section>
 
     <div class="home-content about-head">
-      <p class="title">ABOUT US</p>
-      <p class="sub-title">关于我们</p>
+      <p class="title">{{ t("site.home.headingAboutUs") }}</p>
+      <p class="sub-title">{{ t("site.home.aboutUs") }}</p>
     </div>
 
     <section class="about-content">
       <img :src="aboutContentBg" alt="about" />
       <div class="about-content-right">
-        <h3 class="about-title">南昌弘盾消防设备有限公司</h3>
+        <h3 class="about-title">{{ t("site.home.aboutCompany") }}</h3>
         <div class="about-en">HONGDUN FIRE-FIGHTING</div>
         <p class="about-desc">
-          南昌弘盾消防设备有限公司坐落于江西南昌，占地面积26000多平米。是集研发、生产、销售于一体的门窗制造企业，拥有大型现代化厂房两座，先进的钢制防火门流水线、防盗门流水线，设备先进，质量过硬。公司总投资叁仟多万元，拥有技术人员、工程师等。大量进口及国产优质设备和……
+          {{ t("site.home.aboutDesc") }}
         </p>
 
         <div class="about-feature-list">
@@ -84,33 +86,33 @@
             <div class="feature-circle">
               <el-icon><OfficeBuilding /></el-icon>
             </div>
-            <p>公司简介</p>
+            <p>{{ t("site.home.features.companyProfile") }}</p>
           </div>
           <div class="feature-item" @click="goTo('/factory')">
             <div class="feature-circle">
               <el-icon><UserFilled /></el-icon>
             </div>
-            <p>厂房环境</p>
+            <p>{{ t("site.home.features.factoryEnvironment") }}</p>
           </div>
           <div class="feature-item" @click="goTo('/about/honor')">
             <div class="feature-circle">
               <el-icon><Trophy /></el-icon>
             </div>
-            <p>企业荣誉</p>
+            <p>{{ t("site.home.features.companyHonors") }}</p>
           </div>
           <div class="feature-item" @click="goTo('/reports')">
             <div class="feature-circle">
               <el-icon><Reading /></el-icon>
             </div>
-            <p>检验报告</p>
+            <p>{{ t("site.home.features.testReports") }}</p>
           </div>
         </div>
       </div>
     </section>
 
     <div class="home-content qualification-head">
-      <p class="title">QUALIFICATION</p>
-      <p class="sub-title">资质证书</p>
+      <p class="title">{{ t("site.home.headingQualification") }}</p>
+      <p class="sub-title">{{ t("site.home.certifications") }}</p>
     </div>
 
     <section
@@ -146,8 +148,8 @@
     </section>
 
     <div class="home-content performance-head">
-      <p class="title">PROJECT PERFORMANCE</p>
-      <p class="sub-title">工程业绩</p>
+      <p class="title">{{ t("site.home.headingProjectPerformance") }}</p>
+      <p class="sub-title">{{ t("site.home.projectCases") }}</p>
     </div>
 
     <section class="performance-section">
@@ -173,7 +175,7 @@
 
     <div class="more">
       <p class="more-text">
-        查看更多
+        {{ t("site.home.viewMore") }}
         <el-icon><ArrowRight /></el-icon>
       </p>
     </div>
@@ -183,8 +185,8 @@
         <header class="panel-head">
           <div class="head-left">
             <span class="head-dot" />
-            <h3>新闻中心</h3>
-            <span class="head-en">NEWS</span>
+            <h3>{{ t("site.home.newsCenter") }}</h3>
+            <span class="head-en">{{ t("site.home.headingNews") }}</span>
           </div>
           <span class="head-more" @click="goTo('/news')">MORE+</span>
         </header>
@@ -215,8 +217,8 @@
       <aside class="contact-panel">
         <header class="panel-head contact-head">
           <div class="head-left">
-            <h3>联系我们</h3>
-            <span class="head-en">CONTACT US</span>
+            <h3>{{ t("site.home.contactUs") }}</h3>
+            <span class="head-en">{{ t("site.home.headingContact") }}</span>
           </div>
           <!-- <span class="head-more">MORE+</span> -->
         </header>
@@ -224,9 +226,15 @@
         <el-image class="contact-banner" :src="contactBanner" fit="cover" />
 
         <div class="contact-body">
-          <p class="company-name">南昌弘盾消防设备有限公司</p>
-          <p><strong>李总：</strong>13970083059</p>
-          <p><strong>地址：</strong>南昌市进贤县工业园</p>
+          <p class="company-name">{{ t("site.home.companyName") }}</p>
+          <p>
+            <strong>{{ t("site.home.contactName") }}</strong
+            >13970083059
+          </p>
+          <p>
+            <strong>{{ t("site.home.addressLabel") }}</strong
+            >{{ t("site.home.address") }}
+          </p>
         </div>
       </aside>
     </section>
@@ -234,6 +242,8 @@
 </template>
 
 <script lang="ts" setup>
+import { computed } from "vue";
+import { useI18n } from "vue-i18n";
 import banner01 from "@/assets/home/01_banner.jpg";
 import banner02 from "@/assets/home/02_banner.jpg";
 import banner03 from "@/assets/home/03_banner.jpg";
@@ -249,48 +259,55 @@ import product06 from "@/assets/home/products/steel/06.png";
 import product07 from "@/assets/home/products/steel/07.png";
 import product08 from "@/assets/home/products/steel/08.png";
 import contactBanner from "@/assets/home/03_banner.jpg";
-import newsThumb01 from "@/assets/home/perform/友邦壹号院.png";
-import newsThumb02 from "@/assets/home/perform/星悦荟.png";
 import { useRouter } from "vue-router";
+import { getNewsList } from "@/utils/news";
 
 const router = useRouter();
+const { t, tm, locale } = useI18n();
 
 const imgArr = [banner01, banner02, banner03];
 
-const products = [
-  { id: 1, title: "钢制防火门", image: product01 },
-  { id: 2, title: "钢制防火门", image: product02 },
-  { id: 3, title: "钢制防火门", image: product03 },
-  { id: 4, title: "钢制防火门", image: product04 },
-  { id: 5, title: "钢制防火门", image: product05 },
-  { id: 6, title: "钢质防火门", image: product06 },
-  { id: 7, title: "钢质防火门", image: product07 },
-  { id: 8, title: "钢质防火门", image: product08 },
-];
+const products = computed(() => [
+  { id: 1, title: t("site.home.products.steelFireDoor"), image: product01 },
+  { id: 2, title: t("site.home.products.steelFireDoor"), image: product02 },
+  { id: 3, title: t("site.home.products.steelFireDoor"), image: product03 },
+  { id: 4, title: t("site.home.products.steelFireDoor"), image: product04 },
+  { id: 5, title: t("site.home.products.steelFireDoor"), image: product05 },
+  { id: 6, title: t("site.home.products.steelFireDoor"), image: product06 },
+  { id: 7, title: t("site.home.products.steelFireDoor"), image: product07 },
+  { id: 8, title: t("site.home.products.steelFireDoor"), image: product08 },
+]);
 
-const productImages = products.map((item) => item.image);
+const productImages = computed(() => products.value.map((item) => item.image));
 
 const certisModules = import.meta.glob("@/assets/home/certis/*_certis.png", {
   eager: true,
   import: "default",
 }) as Record<string, string>;
 
-const certisList = Object.entries(certisModules)
-  .sort(([a], [b]) => {
-    return a.localeCompare(b, "zh-CN", { numeric: true });
-  })
-  .map(([_, image], index) => ({
-    id: index + 1,
-    title: "荣誉资质",
-    image,
-  }));
+const certisList = computed(() => {
+  locale.value;
+  return Object.entries(certisModules)
+    .sort(([a], [b]) => {
+      return a.localeCompare(b, "zh-CN", { numeric: true });
+    })
+    .map(([_, image], index) => ({
+      id: index + 1,
+      title: t("site.home.certificationLabel"),
+      image,
+    }));
+});
 
-const certisGroups = Array.from(
-  { length: Math.ceil(certisList.length / 3) },
-  (_, index) => certisList.slice(index * 3, (index + 1) * 3),
+const certisGroups = computed(() => {
+  return Array.from(
+    { length: Math.ceil(certisList.value.length / 3) },
+    (_, index) => certisList.value.slice(index * 3, (index + 1) * 3),
+  );
+});
+
+const certisPreviewList = computed(() =>
+  certisList.value.map((item) => item.image),
 );
-
-const certisPreviewList = certisList.map((item) => item.image);
 
 const performModules = import.meta.glob(
   "@/assets/home/perform/*.{png,jpg,jpeg}",
@@ -300,58 +317,69 @@ const performModules = import.meta.glob(
   },
 ) as Record<string, string>;
 
-const performanceSeed = [
-  { id: 1, title: "萍乡星星科技", fileName: "星星科技", active: false },
-  { id: 2, title: "友邦一号院", fileName: "友邦壹号院", active: true },
-  { id: 3, title: "星悦汇", fileName: "星悦荟", active: false },
-  { id: 4, title: "宜春中央城", fileName: "宜春中央城", active: false },
-  { id: 5, title: "泰豪VR", fileName: "泰豪VR", active: false },
-  { id: 6, title: "新旅·明樾台", fileName: "新旅明樾台", active: false },
-];
+const performanceTitles = computed(() => {
+  locale.value;
+  const titles = tm("site.home.performanceTitles");
+  return Array.isArray(titles) ? titles : [];
+});
 
-const performanceItems = performanceSeed
-  .map((item) => {
-    const matchedPath = Object.keys(performModules).find((path) =>
-      path.includes(item.fileName),
-    );
+const performanceItems = computed(() => {
+  locale.value;
+  return Object.entries(performModules)
+    .sort(([a], [b]) => a.localeCompare(b, "zh-CN", { numeric: true }))
+    .map(([_, image], index) => ({
+      id: index + 1,
+      title: String(performanceTitles.value[index] ?? `Project ${index + 1}`),
+      active: index === 1,
+      image,
+    }));
+});
 
-    return {
-      id: item.id,
-      title: item.title,
-      active: item.active,
-      image: matchedPath ? performModules[matchedPath] : "",
-    };
-  })
-  .filter((item) => item.image);
+const performancePreviewList = computed(() =>
+  performanceItems.value.map((item) => item.image),
+);
+const newsThumb01 = computed(
+  () =>
+    performancePreviewList.value[1] ?? performancePreviewList.value[0] ?? "",
+);
+const newsThumb02 = computed(
+  () =>
+    performancePreviewList.value[2] ?? performancePreviewList.value[0] ?? "",
+);
 
-const performancePreviewList = performanceItems.map((item) => item.image);
+const allNews = computed(() => {
+  locale.value;
+  return getNewsList(t);
+});
 
-const newsFeatured = {
-  date: "07-08",
-  year: "2020",
-  title: "乙级防火窗应该具有哪些条件?",
-  summary:
-    "乙级防火窗应具有哪些条件目前高层修建外窗大少数采用断桥铝的中空玻璃窗，以满足高...",
+const toSummary = (text: string) => {
+  return text.replace(/\s+/g, " ").trim().slice(0, 88) + "...";
 };
 
-const newsList = [
-  {
-    id: 1,
-    title: "常开防火门自动控制原理以及检查方法",
-    summary:
-      "对于常开的防火门，民用与工业建筑的日常检查应重点关注闭门器和联动状态。",
-    date: "07 /08",
-    image: newsThumb01,
-  },
-  {
-    id: 2,
-    title: "防火卷帘门如何安装",
-    summary:
-      "第一步：安装导轨，确定两侧导轨安装位置并校准垂直度，确保卷帘运行稳定。",
-    date: "07 /08",
-    image: newsThumb02,
-  },
-];
+const newsFeatured = computed(() => {
+  const first = allNews.value[0];
+  if (!first) {
+    return { date: "", year: "", title: "", summary: "" };
+  }
+
+  return {
+    date: first.date,
+    year: first.year,
+    title: first.title,
+    summary: toSummary(first.content),
+  };
+});
+
+const newsList = computed(() => {
+  const rows = allNews.value.slice(1, 3);
+  return rows.map((item, index) => ({
+    id: index + 1,
+    title: item.title,
+    summary: toSummary(item.content),
+    date: item.date.replace("-", " /"),
+    image: index === 0 ? newsThumb01.value : newsThumb02.value,
+  }));
+});
 
 const goTo = (path: string) => {
   if (router.currentRoute.value.path !== path) {

@@ -2,20 +2,24 @@
   <el-container class="app-shell">
     <el-header class="app-header">
       <p class="brand">
-        欢迎您访问南昌弘盾消防设备有限公司——集研发、生产、销售于一体的门窗制造企业！
+        {{ t("site.app.brandWelcome") }}
       </p>
       <div class="header-actions">
         <div class="phone">
           <el-icon><Phone /></el-icon>
-          <span>13970083059 欢迎来电订购！</span>
+          <span>{{ t("site.app.phoneHint") }}</span>
         </div>
         <el-popover placement="bottom" trigger="hover">
           <template #reference>
             <p class="lang-title">{{ t("common.language") }}</p>
           </template>
           <div class="lang">
-            <el-button text @click="changeLocale('zh-CN')">中文</el-button>
-            <el-button text @click="changeLocale('en-US')">English</el-button>
+            <el-button text @click="changeLocale('zh-CN')">
+              {{ t("common.switchToZh") }}
+            </el-button>
+            <el-button text @click="changeLocale('en-US')">
+              {{ t("common.switchToEn") }}
+            </el-button>
           </div>
         </el-popover>
       </div>
@@ -29,27 +33,51 @@
         mode="horizontal"
         @select="handleSelect"
       >
-        <el-menu-item index="1">首页</el-menu-item>
+        <el-menu-item index="1">{{ t("site.app.nav.home") }}</el-menu-item>
         <el-sub-menu index="2">
-          <template #title>关于弘盾</template>
-          <el-menu-item index="2-1">公司简介</el-menu-item>
-          <el-menu-item index="2-2">企业荣誉</el-menu-item>
+          <template #title>{{ t("site.app.nav.about") }}</template>
+          <el-menu-item index="2-1">{{
+            t("site.app.nav.companyProfile")
+          }}</el-menu-item>
+          <el-menu-item index="2-2">{{
+            t("site.app.nav.companyHonors")
+          }}</el-menu-item>
         </el-sub-menu>
-        <el-menu-item index="3">新闻资讯</el-menu-item>
+        <el-menu-item index="3">{{ t("site.app.nav.news") }}</el-menu-item>
         <el-sub-menu index="4">
-          <template #title>产品中心</template>
-          <el-menu-item index="4-1">钢质防火门</el-menu-item>
-          <el-menu-item index="4-2">木质防火门</el-menu-item>
-          <el-menu-item index="4-3">钢质防火窗</el-menu-item>
-          <el-menu-item index="4-4">铝质防火窗</el-menu-item>
-          <el-menu-item index="4-5">不锈钢防火门</el-menu-item>
-          <el-menu-item index="4-6">特质防火卷帘</el-menu-item>
-          <el-menu-item index="4-7">挡烟垂壁</el-menu-item>
-          <el-menu-item index="4-8">防火玻璃</el-menu-item>
+          <template #title>{{ t("site.app.nav.products") }}</template>
+          <el-menu-item index="4-1">{{
+            t("site.app.nav.steelFireDoor")
+          }}</el-menu-item>
+          <el-menu-item index="4-2">{{
+            t("site.app.nav.woodenFireDoor")
+          }}</el-menu-item>
+          <el-menu-item index="4-3">{{
+            t("site.app.nav.steelFireWindow")
+          }}</el-menu-item>
+          <el-menu-item index="4-4">{{
+            t("site.app.nav.aluminumFireWindow")
+          }}</el-menu-item>
+          <el-menu-item index="4-5">{{
+            t("site.app.nav.stainlessSteelFireDoor")
+          }}</el-menu-item>
+          <el-menu-item index="4-6">{{
+            t("site.app.nav.premiumFireShutter")
+          }}</el-menu-item>
+          <el-menu-item index="4-7">{{
+            t("site.app.nav.smokeBarrier")
+          }}</el-menu-item>
+          <el-menu-item index="4-8">{{
+            t("site.app.nav.fireRatedGlass")
+          }}</el-menu-item>
         </el-sub-menu>
-        <el-menu-item index="5">检验报告</el-menu-item>
-        <el-menu-item index="6">厂房环境</el-menu-item>
-        <el-menu-item index="7">联系我们</el-menu-item>
+        <el-menu-item index="5">{{
+          t("site.app.nav.testReports")
+        }}</el-menu-item>
+        <el-menu-item index="6">{{
+          t("site.app.nav.factoryEnvironment")
+        }}</el-menu-item>
+        <el-menu-item index="7">{{ t("site.app.nav.contactUs") }}</el-menu-item>
       </el-menu>
     </div>
 
@@ -58,9 +86,9 @@
     </el-main>
 
     <el-footer class="app-footer">
-      <p class="line-1">Copyright© 南昌弘盾消防设备有限公司</p>
-      <p class="line-2">李总：13970083059 地址：南昌市进贤县工业园</p>
-      <p class="line-3">赣ICP备20008938号-1</p>
+      <p class="line-1">{{ t("site.app.footer.line1") }}</p>
+      <p class="line-2">{{ t("site.app.footer.line2") }}</p>
+      <p class="line-3">{{ t("site.app.footer.line3") }}</p>
     </el-footer>
   </el-container>
 </template>
@@ -138,7 +166,7 @@ const handleSelect = (key: string) => {
   }
 };
 
-// 切换语言
+// Switch language
 function changeLocale(locale: string) {
   setAppLocale(locale as Locale);
 }

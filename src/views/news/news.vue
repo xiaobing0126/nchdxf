@@ -20,11 +20,19 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from "vue";
 import { House } from "@element-plus/icons-vue";
-import { newsList } from "@/utils/news";
+import { useI18n } from "vue-i18n";
+import { getNewsList } from "@/utils/news";
 import { useRouter } from "vue-router";
 
 const router = useRouter();
+const { t, locale } = useI18n();
+
+const newsList = computed(() => {
+  locale.value;
+  return getNewsList(t);
+});
 
 const toPreview = (text: string) => text.replace(/\s+/g, " ").trim();
 

@@ -54,7 +54,7 @@ const reportModules = import.meta.glob(
 const reportList: ReportItem[] = Object.entries(reportModules)
   .sort(([a], [b]) => a.localeCompare(b, "zh-CN", { numeric: true }))
   .map(([path, image], index) => {
-    const fileName = path.split("/").pop() ?? "报告";
+    const fileName = path.split("/").pop() ?? "Report";
     const title = fileName.replace(/\.[^.]+$/, "");
 
     return {

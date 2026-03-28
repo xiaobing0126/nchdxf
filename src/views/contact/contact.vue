@@ -1,20 +1,26 @@
 <template>
   <section class="contact-page">
     <div class="contact-card">
-      <h1>南昌弘盾消防设备有限公司</h1>
+      <h1>{{ t("site.contact.companyName") }}</h1>
 
       <p class="phone-line">
-        <span class="label">李总：</span>
+        <span class="label">{{ t("site.contact.mrLi") }}</span>
         <strong>13970083059</strong>
       </p>
 
       <p class="address-line">
-        <span class="label">地址：</span>
-        <span>南昌市进贤县工业园</span>
+        <span class="label">{{ t("site.contact.addressLabel") }}</span>
+        <span>{{ t("site.contact.address") }}</span>
       </p>
     </div>
   </section>
 </template>
+
+<script setup lang="ts">
+import { useI18n } from "vue-i18n";
+
+const { t } = useI18n();
+</script>
 
 <style scoped lang="scss">
 .contact-page {

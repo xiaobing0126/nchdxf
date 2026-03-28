@@ -51,7 +51,7 @@ const honorModules = import.meta.glob("@/assets/honor/*.{png,jpg,jpeg,webp}", {
 const honorList = Object.entries(honorModules)
   .sort(([a], [b]) => a.localeCompare(b, "zh-CN", { numeric: true }))
   .map(([path, image], index): HonorItem => {
-    const fileName = path.split("/").pop() ?? "荣誉资质";
+    const fileName = path.split("/").pop() ?? "Certification";
     const title = fileName.replace(/\.[^.]+$/, "");
 
     return {

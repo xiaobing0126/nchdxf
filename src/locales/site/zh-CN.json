@@ -1,0 +1,148 @@
+{
+  "site": {
+    "app": {
+      "brandWelcome": "欢迎您访问南昌弘盾消防设备有限公司——集研发、生产、销售于一体的门窗制造企业。",
+      "phoneHint": "13970083059 欢迎来电订购！",
+      "nav": {
+        "home": "首页",
+        "about": "关于弘盾",
+        "companyProfile": "公司简介",
+        "companyHonors": "企业荣誉",
+        "news": "新闻资讯",
+        "products": "产品中心",
+        "steelFireDoor": "钢质防火门",
+        "woodenFireDoor": "木质防火门",
+        "steelFireWindow": "钢质防火窗",
+        "aluminumFireWindow": "铝质防火窗",
+        "stainlessSteelFireDoor": "不锈钢防火门",
+        "premiumFireShutter": "特级防火卷帘",
+        "smokeBarrier": "挡烟垂壁",
+        "fireRatedGlass": "防火玻璃",
+        "testReports": "检验报告",
+        "factoryEnvironment": "厂房环境",
+        "contactUs": "联系我们"
+      },
+      "footer": {
+        "line1": "Copyright© 南昌弘盾消防设备有限公司",
+        "line2": "李总：13970083059 地址：南昌市进贤县工业园",
+        "line3": "赣ICP备20008938号-1"
+      }
+    },
+    "routes": {
+      "companyProfile": "公司简介",
+      "companyHonors": "企业荣誉",
+      "news": "新闻资讯",
+      "newsDetails": "新闻详情",
+      "steelFireDoor": "钢质防火门",
+      "woodenFireDoor": "木质防火门",
+      "steelFireWindow": "钢质防火窗",
+      "aluminumFireWindow": "铝质防火窗",
+      "stainlessSteelFireDoor": "不锈钢防火门",
+      "premiumFireShutter": "特级防火卷帘",
+      "smokeBarrier": "挡烟垂壁",
+      "fireRatedGlass": "防火玻璃",
+      "testReports": "检验报告",
+      "factoryEnvironment": "厂房环境",
+      "contactUs": "联系我们"
+    },
+    "home": {
+      "headingProductsCenter": "产品中心",
+      "headingAboutUs": "关于我们",
+      "headingQualification": "资质证书",
+      "headingProjectPerformance": "工程业绩",
+      "headingNews": "新闻",
+      "headingContact": "联系我们",
+      "factoryDirectSales": "厂家直销",
+      "viewMore": "查看更多",
+      "safeBanner": "为您生产安全的防火门窗产品",
+      "tags": {
+        "residential": "住宅小区",
+        "mall": "商场",
+        "hotel": "酒店",
+        "office": "办公楼"
+      },
+      "hotline": "咨询电话",
+      "consultNow": "立即咨询",
+      "aboutUs": "关于我们",
+      "aboutCompany": "南昌弘盾消防设备有限公司",
+      "aboutDesc": "南昌弘盾消防设备有限公司坐落于江西南昌，占地面积26000多平米。是集研发、生产、销售于一体的门窗制造企业，拥有大型现代化厂房两座，先进的钢制防火门流水线、防盗门流水线，设备先进，质量过硬。公司总投资叁仟多万元，拥有技术人员、工程师等。大量进口及国产优质设备和……",
+      "features": {
+        "companyProfile": "公司简介",
+        "factoryEnvironment": "厂房环境",
+        "companyHonors": "企业荣誉",
+        "testReports": "检验报告"
+      },
+      "certifications": "资质证书",
+      "projectCases": "工程业绩",
+      "newsCenter": "新闻中心",
+      "contactUs": "联系我们",
+      "companyName": "南昌弘盾消防设备有限公司",
+      "contactName": "李总：",
+      "addressLabel": "地址：",
+      "address": "南昌市进贤县工业园",
+      "products": {
+        "steelFireDoor": "钢制防火门"
+      },
+      "performanceTitles": [
+        "萍乡星星科技",
+        "友邦一号院",
+        "星悦汇",
+        "宜春中央城",
+        "泰豪VR",
+        "新旅·明樾台"
+      ],
+      "certificationLabel": "荣誉资质"
+    },
+    "introduction": {
+      "p1": "南昌弘盾消防设备有限公司坐落于江西南昌，占地面积26000多平米。是集研发、生产、销售于一体的门窗制造企业，拥有大型现代化厂房两座，先进的钢制防火门流水线，防盗门流水线，设备先进，质量过硬。",
+      "p2": "公司总投资叁仟多万元，拥有技术人员、工程师等。大量进口及国产优质设备和一支高素质生产安装技术队伍和售后服务队伍。",
+      "p3Prefix": "公司主要产品有：",
+      "p3Highlight": "钢质防火门，木质防火门，不锈钢防火门，不锈钢全玻防火门，钢质隔热防火窗，钢质非隔热防火窗，铝质非隔热防火窗，固定式挡烟垂壁，活动式挡烟垂壁，特级防火卷帘，防火玻璃等。",
+      "p4": "公司各类产品均经国家部门检测合格并获生产许可证。公司产品严格执行国家标准，并严格执行ISO9001:2018质量管理体系，具有较高的知名度和市场影响力。产品广泛适用于高层建筑、宾馆、酒店、商场、住宅、工厂、机场、车站码头等。",
+      "p5": "本企业坚守：诚信、团结、互进、开拓、集思、永续的企业经营理念，并以\"精益求精，铸就行业品牌\"作为企业持之以恒的经营目标，与时代同步，与客户同心，向顾客奉献高品质产品，并竭诚欢迎各界新老商客莅临指导，共谋双赢合作。"
+    },
+    "contact": {
+      "companyName": "南昌弘盾消防设备有限公司",
+      "mrLi": "李总：",
+      "addressLabel": "地址：",
+      "address": "南昌市进贤县工业园"
+    },
+    "environment": {
+      "title": "厂房环境"
+    },
+    "product": {
+      "noImages": "暂无产品图片",
+      "defaultTitle": "产品中心"
+    },
+    "news": {
+      "item1": {
+        "title": "乙级防火窗应该具有哪些条件？",
+        "content": "乙级防火窗应该具有哪些条件\n\n目前高层建筑外窗多采用断桥铝中空玻璃窗，以满足气密、保温、防水等功能。依据相关规范，高层住宅在特定条件下应配置符合防火要求的外窗系统。\n\n一般建议包括：\n1. 靠外墙设置并具备可开启外窗。\n2. 内外墙及门窗系统满足相应耐火完整性要求。\n\n近年来，非隔热防火窗在外立面适配和耐候性方面表现更好，能够兼顾建筑美观与消防安全。"
+      },
+      "item2": {
+        "title": "常开防火门自动控制原理以及检查方法",
+        "content": "常开防火门通常需与火灾报警系统联动。\n\n当感烟探测器报警后，联动模块驱动释放器动作，防火门在闭门器作用下自动关闭，同时状态信号回传消防控制室。\n\n检查建议：\n1. 核对门体耐火性能和安装位置。\n2. 检查闭门器、顺序器、释放器是否正常。\n3. 验证联动关闭与反馈信号是否可靠。"
+      },
+      "item3": {
+        "title": "防火卷帘门如何安装",
+        "content": "防火卷帘安装通常包括以下步骤：\n\n1. 安装导轨并校正垂直度。\n2. 安装卷轴、支座与驱动机构。\n3. 安装帘板并进行运行测试。\n4. 安装控制箱并完成电气接线。\n5. 设置上下限位并进行多次启闭调试。\n\n最终应确保运行平稳、限位准确、联动可靠。"
+      },
+      "item4": {
+        "title": "防盗门与防火门的区别及认识误区",
+        "content": "防盗门主要强调防撬性能，防火门主要强调耐火完整性与疏散安全。\n\n二者应用场景不同，采购时应核对对应检测报告与认证文件，避免以单一标准替代综合安全要求。"
+      },
+      "item5": {
+        "title": "防火窗的安装要求？",
+        "content": "防火窗安装要点：\n\n1. 到货后核对规格与配件。\n2. 五金安装孔位应准确，安装应平整牢固。\n3. 防火玻璃四边留缝均匀，并使用防火材料填实封边。\n4. 确保窗框横平竖直，整体连接牢固。\n5. 框墙缝隙按规范填实并养护后再投入使用。"
+      },
+      "detail": {
+        "previous": "上一篇：",
+        "next": "下一篇：",
+        "noMore": "没有了",
+        "backToList": "返回新闻列表",
+        "notFoundTitle": "未找到对应文章",
+        "notFoundDesc": "该新闻可能已下线或链接无效。"
+      }
+    }
+  }
+}

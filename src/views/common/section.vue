@@ -7,10 +7,19 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { useRoute } from "vue-router";
+import { useI18n } from "vue-i18n";
 
 const route = useRoute();
+const { t } = useI18n();
 
-const title = computed(() => String(route.meta.title ?? "页面"));
+const title = computed(() => {
+  const titleKey = String(route.meta.titleKey ?? "");
+  if (!titleKey) {
+    return t("site.product.defaultTitle");
+  }
+
+  return t(`site.routes.${titleKey}`);
+});
 </script>
 
 <style scoped lang="scss">

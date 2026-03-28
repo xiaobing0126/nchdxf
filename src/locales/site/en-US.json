@@ -1,0 +1,148 @@
+{
+  "site": {
+    "app": {
+      "brandWelcome": "Welcome to Nanchang Hongdun Fire Equipment Co., Ltd. - a door-and-window manufacturer integrating R&D, production, and sales.",
+      "phoneHint": "13970083059 Call us for inquiries!",
+      "nav": {
+        "home": "Home",
+        "about": "About",
+        "companyProfile": "Company Profile",
+        "companyHonors": "Company Honors",
+        "news": "News",
+        "products": "Products",
+        "steelFireDoor": "Steel Fire Door",
+        "woodenFireDoor": "Wooden Fire Door",
+        "steelFireWindow": "Steel Fire Window",
+        "aluminumFireWindow": "Aluminum Fire Window",
+        "stainlessSteelFireDoor": "Stainless Steel Fire Door",
+        "premiumFireShutter": "Premium Fire Shutter",
+        "smokeBarrier": "Smoke Barrier",
+        "fireRatedGlass": "Fire-Rated Glass",
+        "testReports": "Test Reports",
+        "factoryEnvironment": "Factory Environment",
+        "contactUs": "Contact Us"
+      },
+      "footer": {
+        "line1": "Copyright© Nanchang Hongdun Fire Equipment Co., Ltd.",
+        "line2": "Mr. Li: 13970083059 Address: Industrial Park, Jinxian County, Nanchang",
+        "line3": "ICP License: Gan ICP No. 20008938-1"
+      }
+    },
+    "routes": {
+      "companyProfile": "Company Profile",
+      "companyHonors": "Company Honors",
+      "news": "News",
+      "newsDetails": "News Details",
+      "steelFireDoor": "Steel Fire Door",
+      "woodenFireDoor": "Wooden Fire Door",
+      "steelFireWindow": "Steel Fire Window",
+      "aluminumFireWindow": "Aluminum Fire Window",
+      "stainlessSteelFireDoor": "Stainless Steel Fire Door",
+      "premiumFireShutter": "Premium Fire Shutter",
+      "smokeBarrier": "Smoke Barrier",
+      "fireRatedGlass": "Fire-Rated Glass",
+      "testReports": "Test Reports",
+      "factoryEnvironment": "Factory Environment",
+      "contactUs": "Contact Us"
+    },
+    "home": {
+      "headingProductsCenter": "PRODUCTS CENTER",
+      "headingAboutUs": "ABOUT US",
+      "headingQualification": "QUALIFICATION",
+      "headingProjectPerformance": "PROJECT PERFORMANCE",
+      "headingNews": "NEWS",
+      "headingContact": "CONTACT US",
+      "factoryDirectSales": "Factory Direct Sales",
+      "viewMore": "View More",
+      "safeBanner": "Safe fire-rated doors and windows for your projects",
+      "tags": {
+        "residential": "Residential Communities",
+        "mall": "Shopping Malls",
+        "hotel": "Hotels",
+        "office": "Office Buildings"
+      },
+      "hotline": "Hotline",
+      "consultNow": "Consult Now",
+      "aboutUs": "About Us",
+      "aboutCompany": "Nanchang Hongdun Fire Equipment Co., Ltd.",
+      "aboutDesc": "Located in Nanchang, Jiangxi, our company covers over 26,000 square meters and integrates R&D, manufacturing, and sales. With modern plants, advanced production lines, and professional teams, we provide reliable fire-rated door and window products for diverse projects.",
+      "features": {
+        "companyProfile": "Company Profile",
+        "factoryEnvironment": "Factory Environment",
+        "companyHonors": "Company Honors",
+        "testReports": "Test Reports"
+      },
+      "certifications": "Certifications",
+      "projectCases": "Project Cases",
+      "newsCenter": "News Center",
+      "contactUs": "Contact Us",
+      "companyName": "Nanchang Hongdun Fire Equipment Co., Ltd.",
+      "contactName": "Mr. Li:",
+      "addressLabel": "Address:",
+      "address": "Industrial Park, Jinxian County, Nanchang",
+      "products": {
+        "steelFireDoor": "Steel Fire Door"
+      },
+      "performanceTitles": [
+        "Pingxiang Xingxing Technology",
+        "Youbang No.1 Residence",
+        "Xingyue Hui",
+        "Yichun Central City",
+        "Taihao VR",
+        "Xinlv Mingyue Terrace"
+      ],
+      "certificationLabel": "Certification"
+    },
+    "introduction": {
+      "p1": "Nanchang Hongdun Fire Equipment Co., Ltd. is located in Nanchang, Jiangxi, with a site area of over 26,000 square meters. We are a door-and-window manufacturer integrating R&D, production, and sales, equipped with two modern plants and advanced production lines.",
+      "p2": "With a total investment of over 30 million RMB, the company has skilled technicians and engineers, high-quality imported and domestic equipment, and professional installation and after-sales teams.",
+      "p3Prefix": "Our main products include:",
+      "p3Highlight": "Steel fire doors, wooden fire doors, stainless steel fire doors, stainless steel full-glass fire doors, insulated steel fire windows, non-insulated steel fire windows, non-insulated aluminum fire windows, fixed smoke barriers, movable smoke barriers, premium fire shutters, and fire-rated glass.",
+      "p4": "All products are tested and certified by national authorities and produced under valid manufacturing licenses. We strictly implement national standards and the ISO 9001:2018 quality management system. Our products are widely used in high-rise buildings, hotels, malls, residences, factories, airports, stations, and terminals.",
+      "p5": "We uphold the values of integrity, unity, progress, innovation, shared wisdom, and sustainability. Guided by our long-term goal, \"Pursue excellence and build an industry brand,\" we are committed to delivering high-quality products and sincerely welcome partners from all sectors to work together for mutual success."
+    },
+    "contact": {
+      "companyName": "Nanchang Hongdun Fire Equipment Co., Ltd.",
+      "mrLi": "Mr. Li:",
+      "addressLabel": "Address:",
+      "address": "Industrial Park, Jinxian County, Nanchang"
+    },
+    "environment": {
+      "title": "Factory Environment"
+    },
+    "product": {
+      "noImages": "No product images available.",
+      "defaultTitle": "Products"
+    },
+    "news": {
+      "item1": {
+        "title": "What are the requirements for Class B fire-rated windows?",
+        "content": "Class B fire-rated windows should provide reliable fire integrity and stable overall performance for high-rise buildings.\n\nIn practical projects, windows are expected to satisfy airtightness, thermal insulation, and waterproofing requirements while also meeting fire protection standards.\n\nTypical recommendations include:\n1. Install windows near external walls and ensure operable opening mechanisms.\n2. Use wall systems with compliant fire-resistance ratings.\n3. Match fire doors and fire-rated windows to the required protection level."
+      },
+      "item2": {
+        "title": "Automatic control and inspection methods for normally-open fire doors",
+        "content": "Normally-open fire doors are widely used in both civil and industrial buildings and must be linked to the fire alarm system.\n\nWhen a smoke detector alarms, the linkage module drives the release device, and the door closes automatically through the closer.\n\nInspection checklist:\n1. Verify fire rating and installation position.\n2. Check closer, sequence closer, and release device status.\n3. Confirm automatic closing and signal feedback reliability."
+      },
+      "item3": {
+        "title": "How to install fire shutters",
+        "content": "Typical fire shutter installation process:\n\n1. Install guide rails and calibrate verticality.\n2. Install shaft, supports, and drive mechanism.\n3. Install shutter slats and run movement checks.\n4. Install control box and complete electrical wiring.\n5. Set travel limits and perform repeated up/down commissioning.\n\nFinal acceptance should confirm stable operation, accurate limits, and reliable linkage."
+      },
+      "item4": {
+        "title": "Differences between security doors and fire doors",
+        "content": "Security doors focus on anti-pry performance, while fire doors focus on fire integrity and evacuation safety.\n\nThey serve different scenarios. During procurement, verify corresponding test reports and certifications to avoid replacing one safety requirement with another."
+      },
+      "item5": {
+        "title": "What are the installation requirements for fire-rated windows?",
+        "content": "Key points for fire-rated window installation:\n\n1. Verify quantity, specs, and accessories on delivery.\n2. Ensure accurate hardware hole positioning and secure installation.\n3. Keep even glass gaps and fill with compliant fireproof materials.\n4. Ensure frame alignment in both horizontal and vertical directions.\n5. Fill frame-wall gaps per standards and allow curing before use."
+      },
+      "detail": {
+        "previous": "Previous:",
+        "next": "Next:",
+        "noMore": "No more",
+        "backToList": "Back to News List",
+        "notFoundTitle": "Article Not Found",
+        "notFoundDesc": "This article may be offline or the link is invalid."
+      }
+    }
+  }
+}
