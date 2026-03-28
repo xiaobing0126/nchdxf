@@ -50,7 +50,7 @@ const siteRoutes: RouteRecordRaw[] = [
     path: "/products/steel-window",
     name: "products-steel-window",
     component: ProductList,
-    meta: { title: "钢质防火窗", productFolder: "woodenwindow" },
+    meta: { title: "钢质防火窗", productFolder: "steelwindow" },
   },
   {
     path: "/products/aluminum-window",

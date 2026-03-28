@@ -117,16 +117,17 @@ const previewList = computed(() =>
   }
 
   .product-title {
-    width: 70%;
+    width: 92%;
     margin: 12px auto 0;
     padding: 12px 10px;
     text-align: center;
     color: #4c4c4c;
-    font-size: 42px;
-    transform: scale(0.5);
-    transform-origin: center center;
-    line-height: 1;
+    font-size: 24px;
+    line-height: 1.2;
     font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     transition:
       background-color 0.2s ease,
       color 0.2s ease;
@@ -190,9 +191,10 @@ const previewList = computed(() =>
     }
 
     .product-title {
-      width: 86%;
+      width: 92%;
       margin-top: 8px;
       padding: 10px 8px;
+      font-size: 22px;
     }
   }
 }
