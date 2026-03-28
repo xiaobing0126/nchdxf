@@ -4,19 +4,21 @@
       <p class="brand">
         欢迎您访问南昌弘盾消防设备有限公司——集研发、生产、销售于一体的门窗制造企业！
       </p>
-      <div class="phone">
-        <el-icon><Phone /></el-icon>
-        13970083059 欢迎来电订购！
-      </div>
-      <el-popover placement="bottom" trigger="hover">
-        <template #reference>
-          <p class="lang-title">{{ t("common.language") }}</p>
-        </template>
-        <div class="lang">
-          <el-button text @click="changeLocale('zh-CN')">中文</el-button>
-          <el-button text @click="changeLocale('en-US')">English</el-button>
+      <div class="header-actions">
+        <div class="phone">
+          <el-icon><Phone /></el-icon>
+          <span>13970083059 欢迎来电订购！</span>
         </div>
-      </el-popover>
+        <el-popover placement="bottom" trigger="hover">
+          <template #reference>
+            <p class="lang-title">{{ t("common.language") }}</p>
+          </template>
+          <div class="lang">
+            <el-button text @click="changeLocale('zh-CN')">中文</el-button>
+            <el-button text @click="changeLocale('en-US')">English</el-button>
+          </div>
+        </el-popover>
+      </div>
     </el-header>
 
     <div class="sub-header">
@@ -157,24 +159,52 @@ function changeLocale(locale: string) {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 20px;
+    min-height: 64px;
+    padding: 10px 28px;
     background: #2f353b;
     color: #ffffff;
 
     .brand {
+      flex: 1;
+      min-width: 0;
+      margin: 0;
+      line-height: 1.4;
+      letter-spacing: 0.2px;
       font-size: 20px;
       font-weight: 700;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-shrink: 0;
     }
 
     .phone {
       display: flex;
       align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+      font-size: 18px;
+      font-weight: 700;
+
+      .el-icon {
+        font-size: 18px;
+      }
     }
 
     .lang-title {
-      font-size: 14px;
+      margin: 0;
+      font-size: 24px;
+      transform: scale(0.5);
+      transform-origin: right center;
       font-weight: 500;
       cursor: pointer;
       color: #ffffff;
+      line-height: 1;
+      white-space: nowrap;
     }
   }
 
@@ -191,6 +221,7 @@ function changeLocale(locale: string) {
 
     .el-menu-list {
       flex: 1;
+      min-width: 0;
       background: transparent;
       border: none;
 
@@ -206,6 +237,15 @@ function changeLocale(locale: string) {
       }
       :deep(.el-menu--horizontal > .el-sub-menu.is-active .el-sub-menu__title) {
         color: $brand-color !important;
+      }
+
+      :deep(.el-menu--horizontal) {
+        white-space: nowrap;
+      }
+
+      :deep(.el-menu-item),
+      :deep(.el-sub-menu__title) {
+        padding: 0 14px;
       }
     }
   }
@@ -256,8 +296,158 @@ function changeLocale(locale: string) {
   }
 }
 
+@media (max-width: 1200px) {
+  .app-shell {
+    .app-header {
+      padding: 10px 18px;
+      gap: 14px;
+
+      .brand {
+        font-size: 16px;
+      }
+
+      .header-actions {
+        gap: 14px;
+      }
+
+      .phone {
+        font-size: 14px;
+
+        .el-icon {
+          font-size: 15px;
+        }
+      }
+
+      .lang-title {
+        font-size: 22px;
+      }
+    }
+
+    .sub-header {
+      padding: 10px 16px;
+      gap: 14px;
+
+      img {
+        width: 180px;
+      }
+
+      .el-menu-list {
+        :deep(.el-menu-item),
+        :deep(.el-sub-menu__title) {
+          font-size: 14px;
+          padding: 0 10px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .app-shell {
+    .app-header {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 8px;
+      padding: 10px 14px;
+
+      .brand {
+        font-size: 14px;
+      }
+
+      .header-actions {
+        width: 100%;
+        justify-content: space-between;
+        gap: 10px;
+      }
+
+      .phone {
+        font-size: 13px;
+      }
+
+      .lang-title {
+        font-size: 20px;
+      }
+    }
+
+    .sub-header {
+      flex-direction: column;
+      align-items: stretch;
+      padding: 10px 12px;
+      gap: 8px;
+
+      img {
+        width: 170px;
+      }
+
+      .el-menu-list {
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        :deep(.el-menu--horizontal) {
+          display: inline-flex;
+          min-width: max-content;
+        }
+
+        :deep(.el-menu-item),
+        :deep(.el-sub-menu__title) {
+          font-size: 13px;
+          padding: 0 9px;
+          height: 46px;
+          line-height: 46px;
+        }
+      }
+    }
+  }
+}
+
 @media (max-width: 768px) {
   .app-shell {
+    .app-header {
+      padding: 8px 10px;
+
+      .brand {
+        font-size: 13px;
+        line-height: 1.5;
+      }
+
+      .header-actions {
+        flex-wrap: wrap;
+        row-gap: 6px;
+      }
+
+      .phone {
+        font-size: 12px;
+        gap: 6px;
+        white-space: normal;
+
+        .el-icon {
+          font-size: 14px;
+        }
+      }
+
+      .lang-title {
+        font-size: 18px;
+      }
+    }
+
+    .sub-header {
+      padding: 8px 10px;
+
+      img {
+        width: 148px;
+      }
+
+      .el-menu-list {
+        :deep(.el-menu-item),
+        :deep(.el-sub-menu__title) {
+          font-size: 12px;
+          padding: 0 8px;
+          height: 42px;
+          line-height: 42px;
+        }
+      }
+    }
+
     .app-footer {
       min-height: 52px;
       gap: 2px;
@@ -278,6 +468,42 @@ function changeLocale(locale: string) {
 
       .line-3 {
         font-size: 12px;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .app-shell {
+    .app-header {
+      .brand {
+        font-size: 12px;
+      }
+
+      .phone {
+        span {
+          font-size: 11px;
+        }
+      }
+
+      .lang-title {
+        font-size: 16px;
+      }
+    }
+
+    .sub-header {
+      img {
+        width: 132px;
+      }
+
+      .el-menu-list {
+        :deep(.el-menu-item),
+        :deep(.el-sub-menu__title) {
+          font-size: 11px;
+          padding: 0 7px;
+          height: 38px;
+          line-height: 38px;
+        }
       }
     }
   }

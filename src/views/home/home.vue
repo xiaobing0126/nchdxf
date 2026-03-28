@@ -570,7 +570,7 @@ const goProductsCenter = () => {
       justify-content: center;
       padding: 40px 42px;
       gap: 22px;
-      align-items: anchor-center;
+      align-items: center;
 
       .phone-line {
         display: flex;
@@ -1213,6 +1213,22 @@ const goProductsCenter = () => {
 
 @media (max-width: 900px) {
   .home-body {
+    .hero-carousel {
+      :deep(.el-carousel__container) {
+        height: 260px !important;
+      }
+    }
+
+    .more {
+      font-size: 16px;
+
+      .more-text {
+        width: 176px;
+        height: 40px;
+        border-radius: 20px;
+      }
+    }
+
     .about-content {
       flex-direction: column;
       align-items: stretch;
@@ -1300,6 +1316,8 @@ const goProductsCenter = () => {
 
 @media (max-width: 640px) {
   .home-body {
+    padding-bottom: 16px;
+
     .products-wrap {
       margin: 14px 12px 0;
       padding: 12px;
@@ -1311,12 +1329,37 @@ const goProductsCenter = () => {
     }
 
     .home-content {
+      margin-top: 14px;
+
       .title {
-        font-size: 24px;
+        font-size: 22px;
       }
 
       .sub-title {
-        font-size: 20px;
+        margin-left: 0;
+        font-size: 16px;
+      }
+    }
+
+    .about-head,
+    .product-head,
+    .qualification-head,
+    .performance-head {
+      margin-top: 34px;
+    }
+
+    .products-wrap {
+      .product-card {
+        .product-image-box {
+          height: 190px;
+        }
+
+        .product-title {
+          width: 100%;
+          padding: 8px 6px;
+          margin-top: 8px;
+          font-size: 16px;
+        }
       }
     }
 
@@ -1325,32 +1368,151 @@ const goProductsCenter = () => {
       border-radius: 14px;
 
       .banner-left {
-        padding: 18px;
+        padding: 16px;
+
+        .banner-title {
+          font-size: 22px;
+          line-height: 1.35;
+        }
+
+        .banner-tags {
+          margin-top: 12px;
+          gap: 10px 14px;
+        }
+
+        .tag-item {
+          font-size: 14px;
+          padding-left: 22px;
+
+          &::before {
+            width: 16px;
+            height: 16px;
+          }
+
+          &::after {
+            left: 5px;
+            top: 6px;
+            width: 7px;
+            height: 4px;
+          }
+        }
       }
 
       .banner-right {
-        padding: 18px;
+        padding: 16px;
+        align-items: flex-start;
+        gap: 12px;
+
+        .phone-line {
+          gap: 8px;
+          font-size: 14px;
+          flex-wrap: wrap;
+
+          strong {
+            font-size: 24px;
+            line-height: 1.2;
+          }
+        }
+
+        .phone-icon {
+          font-size: 22px;
+        }
+
+        .consult-btn {
+          width: 146px;
+          height: 42px;
+          font-size: 16px;
+          transform: none;
+          transform-origin: center;
+        }
       }
     }
 
     .about-content {
       margin: 14px 12px 0;
-      border-radius: 14px;
+      gap: 14px;
 
       .about-content-right {
+        padding-right: 0;
+
+        .about-title {
+          text-align: left;
+          font-size: 22px;
+          transform: none;
+          line-height: 1.4;
+        }
+
+        .about-en {
+          margin: 8px 0 12px;
+          width: 100%;
+          justify-content: flex-start;
+          gap: 8px;
+          font-size: 14px;
+          transform: none;
+
+          &::before,
+          &::after {
+            width: 24px;
+          }
+        }
+
+        .about-desc {
+          margin: 0;
+          width: 100%;
+          font-size: 14px;
+          line-height: 1.7;
+          transform: none;
+        }
+
         .about-feature-list {
+          margin-top: 14px;
           grid-template-columns: repeat(2, minmax(0, 1fr));
           gap: 12px;
         }
 
-        .feature-circle {
-          width: 80px;
-          height: 80px;
-
-          .el-icon {
-            font-size: 30px;
+        .feature-item {
+          p {
+            font-size: 14px;
+            transform: none;
           }
         }
+
+        .feature-circle {
+          width: 62px;
+          height: 62px;
+          border-width: 2px;
+
+          .el-icon {
+            font-size: 22px;
+          }
+        }
+      }
+    }
+
+    .qualification-section {
+      margin: 14px 0;
+      padding: 14px 10px;
+
+      .qualification-carousel {
+        :deep(.el-carousel__container) {
+          height: 300px !important;
+        }
+
+        :deep(.el-carousel__arrow) {
+          width: 34px;
+          height: 34px;
+        }
+      }
+
+      .cert-image-wrap {
+        height: 210px;
+        padding: 4px;
+      }
+
+      .cert-title {
+        margin-top: 8px;
+        font-size: 15px;
+        transform: none;
       }
     }
 
@@ -1358,44 +1520,180 @@ const goProductsCenter = () => {
       margin: 14px 12px 0;
       padding: 14px;
 
+      .performance-grid {
+        gap: 12px;
+      }
+
       .performance-card {
         .performance-image {
-          height: 220px;
+          height: 190px;
+        }
+
+        .performance-name {
+          min-height: 42px;
+          font-size: 15px;
+          transform: none;
         }
       }
     }
 
     .news-contact-section {
+      margin: 20px 12px 0;
+
       .panel-head {
+        height: 54px;
+
         .head-left {
           gap: 10px;
         }
 
         h3 {
-          font-size: 32px;
+          font-size: 18px;
+          transform: none;
         }
 
         .head-en,
         .head-more {
-          font-size: 13px;
+          font-size: 12px;
+        }
+      }
+
+      .news-body {
+        padding: 10px;
+      }
+
+      .featured-news {
+        padding-bottom: 14px;
+        margin-bottom: 12px;
+
+        .featured-date {
+          strong {
+            font-size: 21px;
+          }
+
+          span {
+            font-size: 14px;
+          }
+        }
+
+        .featured-content {
+          h4 {
+            font-size: 16px;
+            transform: none;
+            width: 100%;
+            line-height: 1.4;
+          }
+
+          p {
+            margin-top: 6px;
+            font-size: 13px;
+            -webkit-line-clamp: 2;
+          }
+        }
+      }
+
+      .news-row {
+        .row-content {
+          h5 {
+            font-size: 15px;
+            transform: none;
+            width: 100%;
+            line-height: 1.4;
+          }
+
+          p {
+            margin-top: 4px;
+            font-size: 12px;
+            -webkit-line-clamp: 2;
+          }
         }
       }
 
       .contact-panel {
         .contact-banner {
-          height: 170px;
+          height: 146px;
         }
 
         .contact-body {
           padding: 14px;
 
           .company-name {
-            font-size: 22px;
+            margin-bottom: 6px;
+            font-size: 17px;
           }
 
           p {
-            font-size: 18px;
+            font-size: 14px;
+            line-height: 1.55;
           }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .home-body {
+    .hero-carousel {
+      :deep(.el-carousel__container) {
+        height: 220px !important;
+      }
+    }
+
+    .products-wrap {
+      .products-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .product-card {
+        .product-image-box {
+          height: 210px;
+        }
+      }
+    }
+
+    .consult-banner {
+      .banner-left {
+        .banner-title {
+          font-size: 20px;
+        }
+      }
+
+      .banner-right {
+        .phone-line {
+          strong {
+            font-size: 20px;
+          }
+        }
+      }
+    }
+
+    .about-content {
+      .about-content-right {
+        .about-feature-list {
+          grid-template-columns: 1fr 1fr;
+          gap: 10px;
+        }
+      }
+    }
+
+    .news-contact-section {
+      .featured-news {
+        grid-template-columns: 1fr;
+
+        .featured-date {
+          display: flex;
+          align-items: baseline;
+          gap: 8px;
+        }
+      }
+
+      .news-row {
+        grid-template-columns: 1fr;
+
+        .news-thumb {
+          width: 100%;
+          height: 176px;
         }
       }
     }
